@@ -1,12 +1,13 @@
-FROM golang:1.10-alpine as build
+FROM golang:1.18-alpine as build
 
-WORKDIR /go/src/github.com/AliyunContainerService/gpushare-scheduler-extender
+WORKDIR /go/src/github.com/CERIT-SC/nvidia-scheduler-extender
 COPY . .
 
-RUN go build -o /go/bin/gpushare-sche-extender cmd/*.go
+RUN go mod download && \
+    go build -o /go/bin/nvidia-scheduler-extender cmd/*.go
 
 FROM alpine
 
-COPY --from=build /go/bin/gpushare-sche-extender /usr/bin/gpushare-sche-extender
+COPY --from=build /go/bin/nvidia-scheduler-extender /usr/bin/nvidia-scheduler-extender
 
-CMD ["gpushare-sche-extender"]
+CMD ["nvidia-scheduler-extender"]
