@@ -36,14 +36,14 @@ You can check this [User Guide](docs/userguide.md).
 ### Scheduler Extender
 
 ```bash
-git clone https://github.com/CERIT-SC/gpushare-scheduler-extender.git && cd gpushare-scheduler-extender
+git clone https://github.com/CERIT-SC/nvidia-scheduler-extender.git && cd gpushare-scheduler-extender
 docker build -t cheyang/gpushare-scheduler-extender .
 ```
 
 ### Device Plugin
 
 ```bash
-git clone https://github.com/CERIT-SC/gpushare-device-plugin.git && cd gpushare-device-plugin
+git clone https://github.com/CERIT-SC/nvidia-device-plugin.git && cd gpushare-device-plugin
 docker build -t cheyang/gpushare-device-plugin .
 ```
 
@@ -54,7 +54,7 @@ docker build -t cheyang/gpushare-device-plugin .
 ```bash
 mkdir -p $GOPATH/src/github.com/CERIT-SC
 cd $GOPATH/src/github.com/CERIT-SC
-git clone https://github.com/CERIT-SC/gpushare-device-plugin.git
+git clone https://github.com/CERIT-SC/nvidia-device-plugin.git
 cd gpushare-device-plugin
 go build -o $GOPATH/bin/kubectl-inspect-gpushare-v2 cmd/inspect/*.go
 ```
@@ -71,7 +71,7 @@ go build -o $GOPATH/bin/kubectl-inspect-gpushare-v2 cmd/inspect/*.go
 
 ## Related Project
 
-- [gpushare device plugin](https://github.com/CERIT-SC/gpushare-device-plugin.git)
+- [gpushare device plugin](https://github.com/CERIT-SC/nvidia-device-plugin.git)
 
 ## Roadmap
 

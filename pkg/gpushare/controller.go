@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/CERIT-SC/gpushare-scheduler-extender/pkg/cache"
-	"github.com/CERIT-SC/gpushare-scheduler-extender/pkg/utils"
+	"github.com/CERIT-SC/nvidia-scheduler-extender/pkg/cache"
+	"github.com/CERIT-SC/nvidia-scheduler-extender/pkg/utils"
 	"k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/util/runtime"

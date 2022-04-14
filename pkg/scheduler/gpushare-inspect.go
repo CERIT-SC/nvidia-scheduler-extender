@@ -1,7 +1,7 @@
 package scheduler
 
 import (
-	"github.com/CERIT-SC/gpushare-scheduler-extender/pkg/cache"
+	"github.com/CERIT-SC/nvidia-scheduler-extender/pkg/cache"
 )
 
 func NewGPUShareInspect(c *cache.SchedulerCache) *Inspect {

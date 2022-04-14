@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/CERIT-SC/gpushare-scheduler-extender/pkg/cache"
+	"github.com/CERIT-SC/nvidia-scheduler-extender/pkg/cache"
 	"k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/api/errors"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"

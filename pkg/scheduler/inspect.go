@@ -1,8 +1,8 @@
 package scheduler
 
 import (
-	"github.com/CERIT-SC/gpushare-scheduler-extender/pkg/cache"
-	"github.com/CERIT-SC/gpushare-scheduler-extender/pkg/utils"
+	"github.com/CERIT-SC/nvidia-scheduler-extender/pkg/cache"
+	"github.com/CERIT-SC/nvidia-scheduler-extender/pkg/utils"
 )
 
 func (in Inspect) Handler(name string) *Result {

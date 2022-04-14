@@ -4,7 +4,7 @@ import (
 	"log"
 	"sync"
 
-	"github.com/CERIT-SC/gpushare-scheduler-extender/pkg/utils"
+	"github.com/CERIT-SC/nvidia-scheduler-extender/pkg/utils"
 	"k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/types"
 )

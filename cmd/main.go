@@ -9,10 +9,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/CERIT-SC/gpushare-scheduler-extender/pkg/gpushare"
-	"github.com/CERIT-SC/gpushare-scheduler-extender/pkg/routes"
-	"github.com/CERIT-SC/gpushare-scheduler-extender/pkg/scheduler"
-	"github.com/CERIT-SC/gpushare-scheduler-extender/pkg/utils/signals"
+	"github.com/CERIT-SC/nvidia-scheduler-extender/pkg/gpushare"
+	"github.com/CERIT-SC/nvidia-scheduler-extender/pkg/routes"
+	"github.com/CERIT-SC/nvidia-scheduler-extender/pkg/scheduler"
+	"github.com/CERIT-SC/nvidia-scheduler-extender/pkg/utils/signals"
 	"github.com/comail/colog"
 	"github.com/julienschmidt/httprouter"
 

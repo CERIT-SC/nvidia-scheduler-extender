@@ -11,7 +11,7 @@
 1.Just run:
 
 ```
-git clone https://github.com/CERIT-SC/gpushare-scheduler-extender.git
+git clone https://github.com/CERIT-SC/nvidia-scheduler-extender.git
 cd gpushare-scheduler-extender/deployer/chart
 helm install --name gpushare --namespace kube-system  --set masterCount=3 gpushare-installer
 ```
@@ -44,7 +44,7 @@ sudo mv ./kubectl /usr/bin/kubectl
 
 ```bash
 cd /usr/bin/
-wget https://github.com/CERIT-SC/gpushare-device-plugin/releases/download/v0.3.0/kubectl-inspect-gpushare
+wget https://github.com/CERIT-SC/nvidia-device-plugin/releases/download/v0.3.0/kubectl-inspect-gpushare
 chmod u+x /usr/bin/kubectl-inspect-gpushare
 ```
 

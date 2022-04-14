@@ -10,7 +10,7 @@ import (
 
 	"github.com/julienschmidt/httprouter"
 
-	"github.com/CERIT-SC/gpushare-scheduler-extender/pkg/scheduler"
+	"github.com/CERIT-SC/nvidia-scheduler-extender/pkg/scheduler"
 
 	schedulerapi "k8s.io/kubernetes/pkg/scheduler/api"
 )
