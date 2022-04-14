@@ -1,13 +1,13 @@
 package utils
 
 const (
-	ResourceName = "aliyun.com/gpu-mem"
-	CountName    = "aliyun.com/gpu-count"
+	ResourceName = "cerit.io/gpu-mem"
+	CountName    = "cerit.io/gpu-count"
 
 	EnvNVGPU              = "NVIDIA_VISIBLE_DEVICES"
-	EnvResourceIndex      = "ALIYUN_COM_GPU_MEM_IDX"
-	EnvResourceByPod      = "ALIYUN_COM_GPU_MEM_POD"
-	EnvResourceByDev      = "ALIYUN_COM_GPU_MEM_DEV"
-	EnvAssignedFlag       = "ALIYUN_COM_GPU_MEM_ASSIGNED"
-	EnvResourceAssumeTime = "ALIYUN_COM_GPU_MEM_ASSUME_TIME"
+	EnvResourceIndex      = "CERIT_IO_GPU_MEM_IDX"
+	EnvResourceByPod      = "CERIT_IO_GPU_MEM_POD"
+	EnvResourceByDev      = "CERIT_IO_GPU_MEM_DEV"
+	EnvAssignedFlag       = "CERIT_IO_GPU_MEM_ASSIGNED"
+	EnvResourceAssumeTime = "CERIT_IO_GPU_MEM_ASSUME_TIME"
 )
