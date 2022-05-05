@@ -3,7 +3,7 @@
 kind: ClusterRole
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
-  name: gpushare-schd-extender
+  name: nvidia-scheduler-extender
 rules:
 - apiGroups:
   - ""
@@ -49,43 +49,43 @@ rules:
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: gpushare-schd-extender
-  namespace: kube-system
+  name: nvidia-scheduler-extender
+  namespace: gpu-operator
 ---
 kind: ClusterRoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
-  name: gpushare-schd-extender
-  namespace: kube-system
+  name: nvidia-scheduler-extender
+  namespace: gpu-operator
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: gpushare-schd-extender
+  name: nvidia-scheduler-extender
 subjects:
 - kind: ServiceAccount
-  name: gpushare-schd-extender
-  namespace: kube-system
+  name: nvidia-scheduler-extender
+  namespace: gpu-operator
 
 # deployment yaml
 ---
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: gpushare-schd-extender
-  namespace: kube-system
+  name: nvidia-scheduler-extender
+  namespace: gpu-operator
 spec:
   replicas: 1
   strategy:
     type: Recreate
   selector:
     matchLabels:
-        app: gpushare
-        component: gpushare-schd-extender
+        app: nvidia
+        component: nvidia-scheduler-extender
   template:
     metadata:
       labels:
-        app: gpushare
-        component: gpushare-schd-extender
+        app: nvidia
+        component: nvidia-scheduler-extender
       annotations:
         scheduler.alpha.kubernetes.io/critical-pod: ''
     spec:
@@ -99,26 +99,26 @@ spec:
         key: node.cloudprovider.kubernetes.io/uninitialized
       nodeSelector:
          node-role.kubernetes.io/master: ""
-      serviceAccount: gpushare-schd-extender
+      serviceAccount: nvidia-scheduler-extender
       containers:
-        - name: gpushare-schd-extender
-          image: registry.cn-hangzhou.aliyuncs.com/acs/k8s-gpushare-schd-extender:1.11-d170d8a
+        - name: nvidia-scheduler-extender
+          image: cerit.io/nvidia-scheduler-extender:0.4.0
           env:
           - name: LOG_LEVEL
             value: debug
           - name: PORT
             value: "12345"
 
-# service.yaml            
+# service.yaml
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: gpushare-schd-extender
-  namespace: kube-system
+  name: nvidia-scheduler-extender
+  namespace: gpu-operator
   labels:
-    app: gpushare
-    component: gpushare-schd-extender
+    app: nvidia
+    component: nvidia-scheduler-extender
 spec:
   type: NodePort
   ports:
@@ -128,5 +128,5 @@ spec:
     nodePort: 32766
   selector:
     # select app=ingress-nginx pods
-    app: gpushare
-    component: gpushare-schd-extender   
+    app: nvidia
+    component: nvidia-scheduler-extender
